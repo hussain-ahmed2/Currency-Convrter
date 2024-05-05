@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Hussain Ahmed" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Currency Converter</title>
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+  </head>
+  <body>
+    <div
+      id="wait"
+      class="w-screen absolute min-h-screen grid place-content-center bg-transparent"
+    >
+      <div
+        class="bg-white opacity-90 h-72 w-72 flex flex-col items-center justify-center rounded text-2xl"
+      >
+        <p class="mb-7">Please wait API is Loading</p>
+        <button
+          type="button"
+          class="inline-flex items-center px-4 py-2 font-semibold leading-6 text-sm shadow rounded-md text-white transition ease-in-out duration-150 cursor-none"
+          disabled=""
+        >
+          <svg
+            class="animate-spin h-10 w-10 text-emerald-500"
+            xmlns="http://www.w3.org/2000/svg"
+            fill="none"
+            viewBox="0 0 24 24"
+          >
+            <circle
+              class="opacity-25"
+              cx="12"
+              cy="12"
+              r="10"
+              stroke="currentColor"
+              stroke-width="4"
+            ></circle>
+            <path
+              class="opacity-75"
+              fill="currentColor"
+              d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+            ></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div
+      class="min-h-screen grid place-content-center bg-[url('https://images.pexels.com/photos/1276518/pexels-photo-1276518.jpeg?auto=compress&cs=tinysrgb&w=600')] bg-cover"
+    >
+      <div class="flex flex-col justify-center items-center gap-5">
+        <div class="flex justify-between gap-10 max-w-72">
+          <div>
+            <h1 class="text-3xl text-white">From:</h1>
+            <select name="from" id="from" class="text-xl p-1 rounded"></select>
+          </div>
+          <div>
+            <h1 class="text-3xl text-white">To:</h1>
+            <select name="to" id="to" class="text-xl p-1 rounded"></select>
+          </div>
+        </div>
+        <div class="flex flex-col gap-2 justify-center items-center">
+          <input
+            type="number"
+            name="input"
+            id="input"
+            placeholder="Enter Your Amount"
+            class="w-72 text-2xl p-2 rounded-md"
+            value="1"
+            min="1"
+          />
+          <input
+            type="submit"
+            id="submit"
+            value="Check"
+            class="bg-white w-28 cursor-pointer text-2xl p-2 rounded-lg hover:bg-slate-200"
+          />
+        </div>
+        <div>
+          <h1 class="text-3xl text-white">Result: <span id="result"></span></h1>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>

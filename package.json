@@ -1,0 +1,16 @@
+{
+  "name": "currency-convrter",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "tailwind": "npx tailwindcss -i ./src/input.css -o ./build/css/style.css --watch",
+    "prettier": "npx prettier --write **/*.html"
+  },
+  "keywords": [],
+  "author": "Hussain Ahmed",
+  "license": "ISC",
+  "description": "currency-convrter using api",
+  "devDependencies": {
+    "prettier-plugin-tailwindcss": "^0.5.14"
+  }
+}

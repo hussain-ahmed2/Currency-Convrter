@@ -60,10 +60,16 @@
         <p id="alert" class="bg-red-400 p-2 rounded text-center">alert</p>
       </div>
       <div class="flex flex-col justify-center items-center gap-5">
-        <div class="flex justify-between gap-10 max-w-72">
+        <div class="flex justify-evenly items-end gap-10 max-w-96" id="swapDiv">
           <div>
             <h1 class="text-3xl text-white">From:</h1>
             <select name="from" id="from" class="text-xl p-1 rounded"></select>
+          </div>
+          <div
+            class="w-9 bg-white rounded cursor-pointer hover:bg-yellow-300 active:bg-yellow-500"
+            id="swap"
+          >
+            <img src="swap.png" alt="swap" class="w-full" />
           </div>
           <div>
             <h1 class="text-3xl text-white">To:</h1>

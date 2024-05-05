@@ -6,6 +6,7 @@ const wait = document.getElementById('wait');
 const submit = document.getElementById('submit');
 const warning = document.getElementById('alert');
 const alertDiv = document.getElementById('alertDiv');
+const swap = document.getElementById('swap');
 
 const api = async (f, t) => {
   const res = await fetch(`https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/${f}.json`)
@@ -51,6 +52,15 @@ const api = async (f, t) => {
     }else{
     	nr = obj[to.value] / obj[from.value];
     }
+  }
+
+  swap.onclick = () => {
+    let fromV = from.value;
+    let toV = to.value;
+    from.value = toV;
+    to.value = fromV;
+
+    nr = obj[to.value] / obj[from.value];
   }
 }
 

@@ -4,9 +4,11 @@ const result = document.getElementById('result');
 const input = document.getElementById('input');
 const wait = document.getElementById('wait');
 const submit = document.getElementById('submit');
+const warning = document.getElementById('alert');
+const alertDiv = document.getElementById('alertDiv');
 
 const api = async (f, t) => {
-  const res = await fetch(`https://latest.currency-api.pages.dev/v1/currencies/${f}.json`)
+  const res = await fetch(`https://cdn.jsdelivr.net/npm/@fawazahmed0/currency-api@latest/v1/currencies/${f}.json`)
   const data = await res.json();
   const obj = data[`${f}`];
   const arr = Object.keys(obj);
@@ -25,6 +27,17 @@ const api = async (f, t) => {
   result.innerText = parseFloat(input.value) * parseFloat(obj[t]);
 
   submit.onclick = () => {
+    if(!input.value){
+      warning.innerText = 'Plese Enter A Number';
+      alertDiv.style.display = 'flex';
+      setTimeout(()=>alertDiv.style.display = 'none', 1500);
+      return;
+    }else if(input.value <= 0){
+      warning.innerText = 'Please Enter A Number Greater Then 0';
+      alertDiv.style.display = 'flex';
+      setTimeout(()=>alertDiv.style.display = 'none', 1500);
+      return;
+    }
     result.innerText = parseFloat(input.value) * parseFloat(nr);
   }
 

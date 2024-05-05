@@ -48,6 +48,17 @@
     <div
       class="min-h-screen grid place-content-center bg-[url('https://images.pexels.com/photos/1276518/pexels-photo-1276518.jpeg?auto=compress&cs=tinysrgb&w=600')] bg-cover"
     >
+      <div
+        class="text-white text-4xl absolute flex justify-center items-center w-full mt-32 font-bold"
+      >
+        <p>Currency Converter</p>
+      </div>
+      <div
+        id="alertDiv"
+        class="text-white text-xl absolute justify-center items-center w-full mt-12 font-bold hidden"
+      >
+        <p id="alert" class="bg-red-400 p-2 rounded text-center">alert</p>
+      </div>
       <div class="flex flex-col justify-center items-center gap-5">
         <div class="flex justify-between gap-10 max-w-72">
           <div>
@@ -68,16 +79,19 @@
             class="w-72 text-2xl p-2 rounded-md"
             value="1"
             min="1"
+            required
           />
           <input
             type="submit"
             id="submit"
             value="Check"
-            class="bg-white w-28 cursor-pointer text-2xl p-2 rounded-lg hover:bg-slate-200"
+            class="bg-white w-28 cursor-pointer text-2xl p-2 rounded-lg hover:bg-yellow-200 active:text-white active:bg-yellow-400"
           />
         </div>
         <div>
-          <h1 class="text-3xl text-white">Result: <span id="result"></span></h1>
+          <h1 class="text-3xl text-white text-center">
+            Result: <span id="result"></span>
+          </h1>
         </div>
       </div>
     </div>
